@@ -51,9 +51,9 @@ class CategoryController {
         return next(err);
       }
       if(!doc){
-        return res.status(constant.httpCode.NOT_FOUND);
+        return res.sendStatus(constant.httpCode.NOT_FOUND);
       }
-      return res.status(constant.httpCode.NO_CONTENT);
+      return res.sendStatus(constant.httpCode.NO_CONTENT);
     })
   }
 
@@ -80,12 +80,12 @@ class CategoryController {
         return next(err);
       }
       if(err === true){
-        return res.status(constant.httpCode.BAD_REQUEST);
+        return res.sendStatus(constant.httpCode.BAD_REQUEST);
       }
       if(err === false){
-        return res.status(constant.httpCode.NOT_FOUND);
+        return res.sendStatus(constant.httpCode.NOT_FOUND);
       }
-      return res.status(constant.httpCode.NO_CONTENT);
+      return res.sendStatus(constant.httpCode.NO_CONTENT);
     });
   }
 }

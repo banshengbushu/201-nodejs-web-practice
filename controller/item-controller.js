@@ -51,21 +51,21 @@ class ItemController {
         return next(err);
       }
       if(!doc){
-        return res.status(constant.httpCode.NOT_FOUND);
+        return res.sendStatus(constant.httpCode.NOT_FOUND);
       }
-      return res.status(constant.httpCode.NO_CONTENT);
+      return res.sendStatus(constant.httpCode.NO_CONTENT);
     })
   }
 
   delete(req,res,next){
     Item.findByIdAndRemove(req.params.itemId,(err,doc)=>{
       if(!doc){
-        return res.status(constant.httpCode.NO_CONTENT);
+        return res.sendStatus(constant.httpCode.NO_CONTENT);
       }
       if(err){
         return next(err);
       }
-      return res.status(constant.httpCode.NO_CONTENT);
+      return res.sendStatus(constant.httpCode.NO_CONTENT);
     })
   }
 }
