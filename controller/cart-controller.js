@@ -1,6 +1,6 @@
 const async = require('async');
 
-const Cart = require('../model/category');
+const Cart = require('../model/cart');
 const constant = require('../config/constant');
 
 const mapItemToUri = (items)=> {
